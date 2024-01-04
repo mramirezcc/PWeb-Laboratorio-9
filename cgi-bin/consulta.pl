@@ -24,8 +24,8 @@ if(!($valor eq "")){
   open(IN,"../data/ProgramasDeUniversidades.csv") or die "<h1>Error al abrir el archivo.</h1>\n";
   while(my $line = <IN>){
     my %dict = matchLine($line);
-    my $result = $dict{$valor};
-    if(defined($result) && $result =~ /.*$keyword.*/){
+    my $result = $dict{$campo};
+    if(defined($result) && $result =~ /.*$valor.*/){
       print "<h1>Encontrado: $line</h1>\n";
       $aux = 1;
       next;
@@ -41,7 +41,7 @@ BLOCK
 sub matchLine{
   my %dict = ();
   my $line = $_[0];
-  if($line =~ /^[0-9]+\|(.+)\|.+\|.+\|([0-9]+)\|.+\|.+\|.+\|.+\|.+\|(.+)\|.+\|.+\|.+\|.+\|.+\|(.+).+/){
+  if($line =~ /^[0-9]+\|(.+)\|.+\|.+\|([0-9]+)\|.+\|.+\|.+\|.+\|.+\|(.+)\|.+\|.+\|.+\|.+\|.+\|(.+)\|.+/){
     $dict{"Nombre"} = $1;
     $dict{"Periodo_de_Licenciamiento"} = $2;
     $dict{"Departamento_Local"} = $3;
