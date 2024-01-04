@@ -26,7 +26,7 @@ if(!($valor eq "")){
     my %dict = matchLine($line);
     my $result = $dict{$campo};
     if(defined($result) && $result =~ /.*$valor.*/){
-      print "<h1>Encontrado: $line</h1>\n";
+      print "<h1>Encontrado:</h1>\n$line\n";
       $aux = 1;
       next;
     }
