@@ -47,7 +47,7 @@ sub matchLine{
     $dict{"Departamento_Local"} = $3;
     $dict{"Denominacion_Programa"} = $4;
   }else{
-    print "<h1>Error, datos incorrectos en la línea: $line</h1>\n";
+    print "<h1>Error, datos incorrectos en la línea:</h1>\n$line\n";
   }
   return %dict;
 }
